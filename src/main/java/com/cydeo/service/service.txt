@@ -1,0 +1,26 @@
+public interface UserService {
+    UserDTO save(UserDTO user);
+    UserDTO findById(String username); // find the user by username there is no id
+    List<UserDTO> findAll(); // we will print all the users in the table on the user page
+    void deleteById(String username);
+}
+
+public interface RoleService {
+
+    RoleDTO save(RoleDTO role); //why is it returning an object? not void?
+    RoleDTO findById(Long id);
+    List<UserDTO> findAll();
+    void deleteById(Long id);
+}
+
+Both interfaces share the same methods. We will continue adding Service methods with the same methods
+
+public interface ProjectService {
+
+    ProjectDTO save(ProjectDTO role); //why is it returning an object? not void?
+    ProjectDTO findById(Long id);
+    List<ProjectDTO> findAll();
+    void deleteById(Long id);
+}
+Solution not to repeat the code is applying Generics
+If the parameter is Generic type than one interface will be enough... 
